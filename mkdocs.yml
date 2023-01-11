@@ -14,7 +14,7 @@ theme:
     - navigation.top
   icon:
     logo: material/library
-  language: ja
+  language: en
   palette:
     - scheme: default
       primary: white
