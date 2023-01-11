@@ -4,6 +4,10 @@
     ```
     sudo usermod -aG docker $USER && newgrp docker
     ```
+- restart docker
+    ```
+    sudo systemctl daemon-reload && sudo systemctl restart docker
+    ```
 
 - arm64 Ubuntu
     ```
