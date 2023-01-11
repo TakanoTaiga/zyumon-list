@@ -2,3 +2,5 @@ nav:
     - Portal: index.md
     - ROS2: ros2
     - Docker: docker
+    - Performance Analysis: analysis
+    - CI/CD: ci-cd
