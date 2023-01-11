@@ -2,7 +2,7 @@ site_name: ZYUMON-LIST
 site_url: https://takanotaiga.github.io/zyumon-list/
 repo_url: https://github.com/TakanoTaiga/zyumon-list
 docs_dir: docs
-copyright: Copyright &copy; 2022 Taiga Takano
+copyright: Copyright &copy; 2023 Taiga Takano
 
 theme:
   name: material
