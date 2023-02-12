@@ -1,10 +1,12 @@
-# Performance Analysis
+# Check CPU status
 
 - Check CPU Freq
     ```
     cat /proc/cpuinfo | grep MHz
     ```
-- install cpufreq uitl
+
+# cpufrequtils
+- install cpufrequitl
     ```
     sudo apt install cpufrequtils
     ```
@@ -17,4 +19,8 @@
     GOVERNOR="powersave"
     MAX_SPEED=2.61GHz
     MIN_SPEED=2.60GHz
+    ```
+- service restart
+    ```
+    sudo service cpufrequtils restart
     ```

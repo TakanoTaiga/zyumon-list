@@ -11,7 +11,7 @@
 
 - colcon build 3
     ```shell
-    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to pkg
+    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to
     ```
 
 - rosdep
