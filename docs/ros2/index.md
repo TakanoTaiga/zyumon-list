@@ -1,21 +1,28 @@
 # ROS2
-- colcon build 1
+- colcon build
     ```shell
-    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --cargo-args --release
     ```
-
-- colcon build 2
+- colcon options
     ```shell
-    colcon build --symlink-install
+    --packages-up-to
     ```
-
-- colcon build 3
+    
     ```shell
-    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to
+    --symlink-install
     ```
-
+    
+    ```shell
+    --merge-install
+    ```
 - rosdep
     ```shell
     rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
     ```
  
+- Add Serial Permission
+
+    ```shell
+    sudo gpasswd --add $USER dialout
+    reboot
+    ```
