@@ -1,7 +1,7 @@
 # ROS2
 - colcon build
     ```shell
-    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --cargo-args --release
+    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
     ```
 - colcon options
     ```shell
