@@ -30,7 +30,7 @@ ament_clang_format --clang-format-version 14 --reformat
 
 黒魔術の呪文リスト
 
-- [ROS2](ros2)
-- [Docker](docker)
-- [Performance Analysis](analysis)
-- [CI/CD](ci-cd)
+- [ROS2](ros2/index.md)
+- [Docker](docker/index.md)
+- [Performance Analysis](analysis/index.md)
+- [CI/CD](ci-cd/index.md)

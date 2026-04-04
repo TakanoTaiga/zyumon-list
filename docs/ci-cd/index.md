@@ -24,23 +24,49 @@
     ```yaml
     name: publish-pages 
     on:
-    push:
+      push:
         branches:
-        - master 
-        - main
+          - master 
+          - main
+      workflow_dispatch:
     permissions:
-    contents: write
+      contents: read
+    concurrency:
+      group: pages
+      cancel-in-progress: true
     jobs:
-    deploy:
+      build:
         runs-on: ubuntu-latest
+        permissions:
+          contents: read
         steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
+          - uses: actions/checkout@v5
+          - uses: actions/setup-python@v6
             with:
-            python-version: 3.x
-        - run: pip3 install -U wheel
-        - run: pip3 install fontawesome_markdown markdown mdx_truly_sane_lists mkdocs mkdocs-awesome-pages-plugin mkdocs-exclude mkdocs-macros-plugin mkdocs-material mkdocs-same-dir mkdocs-static-i18n mike plantuml-markdown pymdown-extensions python-markdown-math
-        - run: pip3 install -U git+https://github.com/jimporter/mike
-        - run: pip3 install mkdocs-material 
-        - run: mkdocs gh-deploy --force
+              python-version: "3.12"
+          - uses: astral-sh/setup-uv@v7
+            with:
+              version: "0.9.18"
+              enable-cache: true
+          - uses: actions/configure-pages@v5
+          - run: uv sync --frozen
+          - run: uv run --no-sync mkdocs build
+          - uses: actions/upload-pages-artifact@v4
+            with:
+              path: site
+      deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        permissions:
+          contents: read
+          pages: write
+          id-token: write
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+          - id: deployment
+            uses: actions/deploy-pages@v4
     ```
+
+    Repository Settings > Pages > Build and deployment > Source must be set to `GitHub Actions`.

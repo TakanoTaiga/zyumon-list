@@ -1,0 +1,28 @@
+[project]
+name = "zyumon-list"
+version = "0.1.0"
+description = "MkDocs site for zyumon-list"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fontawesome_markdown",
+    "markdown",
+    "mdx_truly_sane_lists",
+    "mike",
+    "mkdocs<2",
+    "mkdocs-awesome-pages-plugin==2.9.1",
+    "mkdocs-exclude",
+    "mkdocs-macros-plugin",
+    "mkdocs-material",
+    "mkdocs-same-dir",
+    "mkdocs-static-i18n",
+    "plantuml-markdown",
+    "pymdown-extensions",
+    "python-markdown-math",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+mike = { git = "https://github.com/jimporter/mike" }

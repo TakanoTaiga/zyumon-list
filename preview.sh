@@ -1,1 +1,4 @@
-docker run --rm -it -p 8000:8000 -v ${PWD}:/docs takanotaiga/mkdocs:latest
+#!/usr/bin/env sh
+set -eu
+
+uv run mkdocs serve -a 0.0.0.0:8000
